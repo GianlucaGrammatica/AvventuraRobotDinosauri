@@ -8,7 +8,7 @@ namespace AvventuraRobotDinosauri
 {
     internal class Componenti
     {
-        private string[] PossibleComponentys = {"Ferro", "Uranio", "Acciaio", "Cavi", "Lucine", "Interruttori", "Computer Qauuntistico", "Paperella decorativa"};
+        private string[] PossibleComponentys = {"Ferro", "Snack per il viaggio", "Uranio", "Acciaio", "Cavi", "Lucine", "Interruttori", "Computer Qauuntistico", "Paperella decorativa"};
         public string Componente { get;}
         public int id;
         Random random = new Random();
@@ -21,9 +21,14 @@ namespace AvventuraRobotDinosauri
 
         public Componenti(int _id)
         {
-            int index = random.Next(PossibleComponentys.Length);
+            int index = random.Next(PossibleComponentys.Length) +1 ;
             Componente = PossibleComponentys[index];
             id = _id;
+        }
+
+        public override string ToString()
+        {
+            return Componente;
         }
     }
 }
